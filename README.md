@@ -244,7 +244,7 @@ func main(){
 		Database: "testdb",
 	}
 	g.Provide(db)
-	g.GET("/db", func(d *DB) string {
+	g.GET("/db", func(db *DB) string {
 		return db.Query("SELECT * FROM mytable")
 	})
 	g.ListenAndServe(":8000")
